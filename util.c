@@ -1,43 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "util.h"
 
 void* xmalloc(size_t n)
 {
-	void* ptr = malloc(n);
-	if (ptr == NULL) {
-		abort();
-	}
+    void* ptr = malloc(n);
+    if (ptr == NULL) {
+        abort();
+    }
 
-	return ptr;
+    return ptr;
 }
 
 void* xrealloc(void* ptr, size_t n)
 {
-	ptr = realloc(ptr, n);
-	if (ptr == NULL) {
-		abort();
-	}
+    ptr = realloc(ptr, n);
+    if (ptr == NULL) {
+        abort();
+    }
 
-	return ptr;
+    return ptr;
 }
 
 void xfree(void* ptr)
 {
-	if (ptr == NULL) {
-		return;
-	}
+    if (ptr == NULL) {
+        return;
+    }
 
-	free(ptr);
+    free(ptr);
 }
 
 char* xstrdup(const char* s)
 {
-	char* copy = strdup(s);
-	if (copy == NULL) {
-		abort();
-	}
+    char* copy = strdup(s);
+    if (copy == NULL) {
+        abort();
+    }
 
-	return copy;
+    return copy;
 }
 

@@ -3,7 +3,7 @@
 
 void* xmalloc(size_t);
 void* xrealloc(void*, size_t);
-void free(void*);
+void xfree(void*);
 char* xstrdup(const char*);
 
 #endif
